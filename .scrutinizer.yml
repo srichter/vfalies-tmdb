@@ -1,17 +1,5 @@
 build:
     nodes:
-        php71:
-            environment:
-                php:
-                    version: 7.1
-            tests:
-                override:
-                    -
-                        command: 'vendor/bin/phpunit --coverage-clover=coverage.clover'
-                        coverage:
-                            file: 'coverage.clover'
-                            format: 'clover'
-
         php72:
             environment:
                 php:
@@ -28,6 +16,18 @@ build:
             environment:
                 php:
                     version: 7.3
+            tests:
+                override:
+                    -
+                        command: 'vendor/bin/phpunit --coverage-clover=coverage.clover'
+                        coverage:
+                            file: 'coverage.clover'
+                            format: 'clover'
+
+        php74:
+            environment:
+                php:
+                    version: 7.4
             tests:
                 override:
                     -
