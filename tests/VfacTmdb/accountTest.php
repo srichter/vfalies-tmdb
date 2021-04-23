@@ -57,11 +57,9 @@ class AccountTest extends TestCase
         $this->assertEquals(548, $account->getId());
     }
 
-    /**
-     * @expectedException \VfacTmdb\Exceptions\ServerErrorException
-     */
     public function testConstructorFailedAccountDetails()
     {
+        $this->expectException(\VfacTmdb\Exceptions\ServerErrorException::class);
         $session_id = $this->createSession();
 
         $this->tmdb->expects($this->at(0))->method('sendRequest')->willReturn(json_decode(file_get_contents('tests/json/configurationOk.json')));

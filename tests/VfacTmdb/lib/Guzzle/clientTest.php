@@ -57,10 +57,10 @@ class ClientTest extends TestCase
 
     /**
      * @test
-     * @expectedException \Exception
      */
     public function testGetResponseNOk()
     {
+        $this->expectException(\Exception::class);
         $guzzleClient = new \GuzzleHttp\Client();
 
         $client   = new Client($guzzleClient);
@@ -69,10 +69,10 @@ class ClientTest extends TestCase
 
     /**
      * @test
-     * @expectedException VfacTmdb\Exceptions\NotFoundException
      */
     public function testGetResponseNok404()
     {
+        $this->expectException(\VfacTmdb\Exceptions\NotFoundException::class);
         $guzzleClient = $this->mockResponseStatus(404);
 
         $client   = new Client($guzzleClient);
@@ -81,10 +81,10 @@ class ClientTest extends TestCase
 
     /**
      * @test
-     * @expectedException VfacTmdb\Exceptions\ServerErrorException
      */
     public function testGetResponseNok500()
     {
+        $this->expectException(\VfacTmdb\Exceptions\ServerErrorException::class);
         $guzzleClient = $this->mockResponseStatus(500);
 
         $client   = new Client($guzzleClient);
@@ -107,10 +107,10 @@ class ClientTest extends TestCase
 
     /**
      * @test
-     * @expectedException \Exception
      */
     public function testPostResponseNOk()
     {
+        $this->expectException(\Exception::class);
         $guzzleClient = new \GuzzleHttp\Client();
 
         $client   = new Client($guzzleClient);
@@ -119,10 +119,10 @@ class ClientTest extends TestCase
 
     /**
      * @test
-     * @expectedException VfacTmdb\Exceptions\NotFoundException
      */
     public function testPostResponseNok404()
     {
+        $this->expectException(\VfacTmdb\Exceptions\NotFoundException::class);
         $guzzleClient = $this->mockResponseStatus(404);
 
         $client   = new Client($guzzleClient);
@@ -131,10 +131,10 @@ class ClientTest extends TestCase
 
     /**
      * @test
-     * @expectedException VfacTmdb\Exceptions\ServerErrorException
      */
     public function testPostResponseNok500()
     {
+        $this->expectException(\VfacTmdb\Exceptions\ServerErrorException::class);
         $guzzleClient = $this->mockResponseStatus(500);
 
         $client   = new Client($guzzleClient);
@@ -155,10 +155,10 @@ class ClientTest extends TestCase
 
     /**
      * @test
-     * @expectedException \Exception
      */
     public function testDeleteResponseNOk()
     {
+        $this->expectException(\Exception::class);
         $guzzleClient = new \GuzzleHttp\Client();
 
         $client   = new Client($guzzleClient);
@@ -167,10 +167,10 @@ class ClientTest extends TestCase
 
     /**
      * @test
-     * @expectedException VfacTmdb\Exceptions\NotFoundException
      */
     public function testDeleteResponseNok404()
     {
+        $this->expectException(\VfacTmdb\Exceptions\NotFoundException::class);
         $guzzleClient = $this->mockResponseStatus(404);
 
         $client   = new Client($guzzleClient);
@@ -179,10 +179,10 @@ class ClientTest extends TestCase
 
     /**
      * @test
-     * @expectedException VfacTmdb\Exceptions\ServerErrorException
      */
     public function testDeleteResponseNok500()
     {
+        $this->expectException(\VfacTmdb\Exceptions\ServerErrorException::class);
         $guzzleClient = $this->mockResponseStatus(500);
 
         $client   = new Client($guzzleClient);

@@ -62,10 +62,10 @@ class SearchTest extends TestCase
 
     /**
      * @test
-     * @expectedException VfacTmdb\Exceptions\IncorrectParamException
      */
     public function testSearchMovieEmptyQuery()
     {
+        $this->expectException(\VfacTmdb\Exceptions\IncorrectParamException::class);
         $search = new Search($this->tmdb);
 
         $search->movie('');
@@ -91,11 +91,11 @@ class SearchTest extends TestCase
     }
 
     /**
-     * @expectedException \VfacTmdb\Exceptions\TmdbException
      * @test
      */
     public function testSearchTVShowEmptyQuery()
     {
+        $this->expectException(\VfacTmdb\Exceptions\TmdbException::class);
         $search = new Search($this->tmdb);
 
         $search->tvshow('');
@@ -121,11 +121,11 @@ class SearchTest extends TestCase
     }
 
     /**
-     * @expectedException \VfacTmdb\Exceptions\TmdbException
      * @test
      */
     public function testSearchCollectionEmptyQuery()
     {
+        $this->expectException(\VfacTmdb\Exceptions\TmdbException::class);
         $search = new Search($this->tmdb);
 
         $search->collection('');
@@ -194,10 +194,10 @@ class SearchTest extends TestCase
 
     /**
      * @test
-     * @expectedException VfacTmdb\Exceptions\IncorrectParamException
      */
     public function testSearchPeopleEmptyQuery()
     {
+        $this->expectException(\VfacTmdb\Exceptions\IncorrectParamException::class);
         $search = new Search($this->tmdb);
 
         $search->people('');
@@ -238,10 +238,10 @@ class SearchTest extends TestCase
 
     /**
      * @test
-     * @expectedException VfacTmdb\Exceptions\IncorrectParamException
      */
     public function testSearchCompanyEmptyQuery()
     {
+        $this->expectException(\VfacTmdb\Exceptions\IncorrectParamException::class);
         $search = new Search($this->tmdb);
 
         $search->company('');

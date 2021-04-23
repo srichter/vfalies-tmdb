@@ -57,10 +57,10 @@ class LogoTest extends TestCase
 
     /**
      * @test
-     * @expectedException \VfacTmdb\Exceptions\NotFoundException
      */
     public function testContructFailed()
     {
+        $this->expectException(\VfacTmdb\Exceptions\NotFoundException::class);
         $result               = new \stdClass();
         $result->id           = 4;
         $result->not_property = 'test';

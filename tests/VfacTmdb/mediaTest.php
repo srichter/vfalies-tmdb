@@ -56,10 +56,10 @@ class MediaTest extends TestCase
 
     /**
      * @test
-     * @expectedException VfacTmdb\Exceptions\NotFoundException
      */
     public function testUrlNotFound()
     {
+        $this->expectException(\VfacTmdb\Exceptions\NotFoundException::class);
         $json_object = json_decode(file_get_contents('tests/json/configurationEmptyOk.json'));
         $this->tmdb->method('getConfiguration')->willReturn($json_object);
 
@@ -71,10 +71,10 @@ class MediaTest extends TestCase
 
     /**
      * @test
-     * @expectedException VfacTmdb\Exceptions\IncorrectParamException
      */
     public function testUrlIncorrectParam()
     {
+        $this->expectException(\VfacTmdb\Exceptions\IncorrectParamException::class);
         $json_object = json_decode(file_get_contents('tests/json/configurationOk.json'));
         $this->tmdb->method('getConfiguration')->willReturn($json_object);
 

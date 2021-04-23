@@ -45,10 +45,10 @@ class MonologBuilderTest extends TestCase
 
     /**
      *  @test
-     *  @expectedException InvalidArgumentException
      */
     public function testNewHandler()
     {
+        $this->expectException(\InvalidArgumentException::class);
         $this->monologBuilder->newHandler(\VfacTmdb\Media::class);
     }
 }

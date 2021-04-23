@@ -64,10 +64,10 @@ class CatalogTest extends TestCase
 
     /**
      * @test
-     * @expectedException \Exception
      */
     public function testGetMovieGenresNok()
     {
+        $this->expectException(\Exception::class);
         $this->tmdb->method('sendRequest')->will($this->throwException(new TmdbException()));
 
         $genres = new Catalog($this->tmdb);
@@ -76,10 +76,10 @@ class CatalogTest extends TestCase
 
     /**
      * @test
-     * @expectedException \Exception
      */
     public function testGetMovieListNok()
     {
+        $this->expectException(\Exception::class);
         $this->tmdb->method('sendRequest')->will($this->throwException(new TmdbException()));
 
         $genres = new Catalogs\Genres($this->tmdb);
@@ -88,10 +88,10 @@ class CatalogTest extends TestCase
 
     /**
      * @test
-     * @expectedException \Exception
      */
     public function testGetTVListNok()
     {
+        $this->expectException(\Exception::class);
         $this->tmdb->method('sendRequest')->will($this->throwException(new TmdbException()));
 
         $genres = new Catalog($this->tmdb);
@@ -137,10 +137,10 @@ class CatalogTest extends TestCase
 
     /**
      * @test
-     * @expectedException VfacTmdb\Exceptions\TmdbException
      */
     public function tetsGetJobsNok()
     {
+        $this->expectException(\VfacTmdb\Exceptions\TmdbException::class);
         $this->tmdb->method('sendRequest')->will($this->throwException(new TmdbException()));
 
         $jobs = new Catalog($this->tmdb);

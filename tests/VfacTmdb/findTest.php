@@ -60,10 +60,10 @@ class FindTest extends TestCase
 
     /**
      * @test
-     * @expectedException VfacTmdb\Exceptions\TmdbException
      */
     public function testFindFailure()
     {
+        $this->expectException(\VfacTmdb\Exceptions\TmdbException::class);
         $json_object = json_decode('');
         $this->tmdb->method('sendRequest')->willReturn($json_object);
 

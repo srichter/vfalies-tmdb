@@ -87,11 +87,9 @@ class FavoriteTest extends TestCase
         }
     }
 
-    /**
-     * @expectedException \VfacTmdb\Exceptions\ServerErrorException
-     */
     public function testMarkMovieAsFavoriteFailed()
     {
+        $this->expectException(\VfacTmdb\Exceptions\ServerErrorException::class);
         $session_id = $this->createSession();
 
         $this->tmdb->expects($this->at(0))->method('sendRequest')->willReturn(json_decode(file_get_contents('tests/json/configurationOk.json')));
